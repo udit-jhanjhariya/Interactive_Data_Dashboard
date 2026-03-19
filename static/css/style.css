@@ -1,12 +1,272 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #0d1117;
+    --card-bg: rgba(22, 27, 34, 0.6);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-main: #e6edf3;
+    --text-muted: #7d8590;
+    --accent-primary: #58a6ff;
+    --accent-secondary: #bc8cff;
+    --accent-success: #3fb950;
+    --accent-warning: #d29922;
+    --gradient-glow: radial-gradient(circle at top right, rgba(88, 166, 255, 0.15), transparent 500px),
+        radial-gradient(circle at bottom left, rgba(188, 140, 255, 0.1), transparent 500px);
 }
 
-.card {
-    border: none;
-    border-radius: 10px;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(13, 17, 23, 0.75) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
 }
 
 .navbar-brand {
-    font-weight: bold;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+/* Layout Spacing */
+.container {
+    max-width: 1400px;
+    padding-top: 1rem;
+}
+
+/* Cards (Glassmorphism) */
+.card {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    color: var(--text-main);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.card-title {
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+/* KPIs Specific */
+.bg-primary {
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.02)) !important;
+    border-top: 1px solid rgba(88, 166, 255, 0.4) !important;
+}
+
+.bg-primary h3 {
+    color: #79c0ff;
+    font-weight: 700;
+}
+
+.bg-success {
+    background: linear-gradient(135deg, rgba(63, 185, 80, 0.15), rgba(63, 185, 80, 0.02)) !important;
+    border-top: 1px solid rgba(63, 185, 80, 0.4) !important;
+}
+
+.bg-success h3 {
+    color: #56d364;
+    font-weight: 700;
+}
+
+.bg-info {
+    background: linear-gradient(135deg, rgba(188, 140, 255, 0.15), rgba(188, 140, 255, 0.02)) !important;
+    border-top: 1px solid rgba(188, 140, 255, 0.4) !important;
+}
+
+.bg-info h3 {
+    color: #d2a8ff;
+    font-weight: 700;
+}
+
+/* Forms & Inputs */
+.form-control,
+.form-select {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-main) !important;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(88, 166, 255, 0.15) !important;
+}
+
+.form-select option {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.form-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #1f6feb, #388bfd);
+    border: none;
+    box-shadow: 0 4px 14px rgba(31, 111, 235, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #388bfd, #58a6ff);
+    box-shadow: 0 6px 20px rgba(31, 111, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(90deg, #238636, #2ea043);
+    border: none;
+    box-shadow: 0 4px 14px rgba(35, 134, 54, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(90deg, #2ea043, #3fb950);
+    box-shadow: 0 6px 20px rgba(35, 134, 54, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--accent-primary);
+    border-color: rgba(88, 166, 255, 0.5);
+    background: rgba(88, 166, 255, 0.1);
+}
+
+.btn-outline-primary:hover {
+    background: var(--accent-primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+.btn-outline-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Table */
+.table {
+    color: var(--text-main) !important;
+    margin-bottom: 0;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    color: var(--text-main) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.table-striped>tbody>tr:hover>* {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.table th,
+.table td {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table thead th {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.row {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.row:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.row:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.row:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.row:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
