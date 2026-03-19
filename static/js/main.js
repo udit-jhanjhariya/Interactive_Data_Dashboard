@@ -150,7 +150,8 @@ function buildFilters() {
     });
 
     // 3. Apply Button
-    if (filterCols.length > 0 || numCols.length > 0) {
+    const hasMetrics = filterCols.length > 0 || numCols.length > 0;
+    if (hasMetrics) {
         const btnDiv = document.createElement('div');
         btnDiv.className = 'col-md-3 d-flex align-items-end mt-4';
         const btn = document.createElement('button');
