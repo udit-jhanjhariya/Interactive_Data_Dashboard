@@ -96,3 +96,5 @@ def data():
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+# Ensure app runs safely
