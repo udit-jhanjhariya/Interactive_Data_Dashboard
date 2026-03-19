@@ -445,8 +445,8 @@ function populateTable(data) {
     if (tableBody) {
         tableBody.innerHTML = '';
         const columns = Object.keys(data[0]);
-        const displayData = data.slice(0, 100);
-        displayData.forEach(row => {
+        const visibleRowsData = data.slice(0, 100);
+        visibleRowsData.forEach(row => {
             const tr = document.createElement('tr');
             columns.forEach(col => {
                 const td = document.createElement('td');
