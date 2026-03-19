@@ -375,7 +375,8 @@ let searchTimeout = null;
 function handleSearch() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
-        const query = document.getElementById('tableSearch').value.toLowerCase();
+        const searchBox = document.getElementById('tableSearch');
+        const query = searchBox.value.toLowerCase();
         if (!query) {
             populateTable(currentFilteredData);
             return;
