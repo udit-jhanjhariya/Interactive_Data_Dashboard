@@ -451,7 +451,7 @@ function populateTable(data) {
             columns.forEach(col => {
                 const td = document.createElement('td');
                 let val = row[col];
-                if (typeof val === 'number') {
+                if (typeof val === 'number' && !isNaN(val)) {
                     td.textContent = (val % 1 !== 0) ? val.toFixed(2) : val;
                 } else {
                     td.textContent = val;
