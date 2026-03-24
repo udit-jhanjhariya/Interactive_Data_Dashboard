@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+"""`nMain application module for the Interactive Data Dashboard.`nHandles routing, file uploads, and data preprocessing.`n"""`nfrom flask import Flask, jsonify, render_template, request
 import pandas as pd
 import os
 
