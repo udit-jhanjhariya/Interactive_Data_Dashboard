@@ -85,6 +85,9 @@ function fetchData() {
         });
 }
 
+/**
+ * Dynamically builds the UI filters based on column metadata.
+ */
 function buildFilters() {
     const container = document.getElementById('dynamicFiltersContainer');
     container.innerHTML = '';
