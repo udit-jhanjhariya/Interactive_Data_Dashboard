@@ -219,7 +219,7 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Animations */
+/* --- Animations and Keyframes --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
