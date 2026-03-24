@@ -23,7 +23,7 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* =========================================`n   Navbar Styles`n   ========================================= */
 .navbar {
     background: rgba(13, 17, 23, 0.75) !important;
     backdrop-filter: blur(12px);
