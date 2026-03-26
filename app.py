@@ -16,7 +16,7 @@ def load_default_data():
         except UnicodeDecodeError:
             global_df = pd.read_csv("data.csv", encoding='windows-1252')
     except Exception as e:
-        print(f"Error loading data.csv: {e}")
+        print(f"Error loading initial dataset from data.csv: {e}")
         global_df = pd.DataFrame(columns=["Order Date", "Category", "Sub-Category", "Sales", "Profit", "Region"])
 
 # Load data on startup
