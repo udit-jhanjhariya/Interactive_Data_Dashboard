@@ -8,6 +8,7 @@ app = Flask(__name__)
 global_df = None
 
 def load_default_data():
+    """Loads the default dataset into the global dataframe."""
     global global_df
     try:
         try:
