@@ -30,6 +30,7 @@ const chartColors = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Fetch initial data for the dashboard on load
     fetchData();
 
     document.getElementById('uploadForm').addEventListener('submit', function (e) {
