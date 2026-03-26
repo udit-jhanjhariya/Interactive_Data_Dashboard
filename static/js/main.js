@@ -168,6 +168,7 @@ function buildFilters() {
 }
 
 function resetFilters() {
+    // Reset all dynamic filter dropdowns to their default state
     const selects = document.querySelectorAll('.dynamic-filter');
     selects.forEach(sel => sel.value = 'all');
     if (document.getElementById('tableSearch')) document.getElementById('tableSearch').value = '';
