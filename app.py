@@ -1,4 +1,8 @@
-"""`nMain application module for the Interactive Data Dashboard.`nHandles routing, file uploads, and data preprocessing.`n"""`nfrom flask import Flask, jsonify, render_template, request
+"""
+Main application module for the Interactive Data Dashboard.
+Handles routing, file uploads, and data preprocessing.
+"""
+from flask import Flask, jsonify, render_template, request
 import pandas as pd
 import os
 
@@ -71,9 +75,17 @@ def upload_file():
         
     if file and file.filename.endswith('.csv'):
         try:
-            # Try to read the uploaded CSV
-            global_df = pd.read_csv(file)
+            # Try to read the uploaded CSV with utf-8
+            global_df = pd.read_csv(file, encoding='utf-8')
             return jsonify({"message": "File uploaded successfully"}), 200
+        except UnicodeDecodeError:
+            try:
+                # Fallback to windows-1252 if utf-8 fails
+                file.seek(0)
+                global_df = pd.read_csv(file, encoding='windows-1252')
+                return jsonify({"message": "File uploaded successfully (with fallback encoding)"}), 200
+            except Exception as e:
+                return jsonify({"error": str(e)}), 500
         except Exception as e:
             return jsonify({"error": str(e)}), 500
     else:
