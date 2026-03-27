@@ -86,7 +86,6 @@ The project is ready for cloud deployment using **Render**.
 2. Connect the repository to Render.
 3. Deploy the application.
 
----
 
 ## 🛠️ Technologies Used
 - **Python** (Backend Logic)
@@ -96,7 +95,5 @@ The project is ready for cloud deployment using **Render**.
 - **CSS3** (Styling)
 - **JavaScript** (Interactivity)
 - **Chart.js** (Data Visualization)
-
-
 
 <!-- Setup instructions complete -->
